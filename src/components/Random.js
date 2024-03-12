@@ -9,11 +9,6 @@ const Random = () => {
 
     const {gif,loading,fetchData} = useGif();
 
-    function clickHandler()
-    {
-        fetchData();
-    }
-
     return (
         <div className='bg-green-500 w-1/2 mx-auto mt-16 rounded-lg border-black flex flex-col items-center border-2 gap-6'>
 
@@ -21,7 +16,7 @@ const Random = () => {
 
             {loading ? (<Spinner/>) : (<img src={gif} width="450" height="300"></img>)}
 
-            <button onClick={clickHandler} className='w-10/12 bg-green-200 rounded-lg py-2 font-semibold text-xl mb-8'>Generate</button>
+            <button onClick={() => fetchData()} className='w-10/12 bg-green-200 rounded-lg py-2 font-semibold text-xl mb-8'>Generate</button>
 
         </div>
     )
